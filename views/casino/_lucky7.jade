@@ -1,0 +1,117 @@
+#g-lucky7.g-main-wrapper
+  a#view-help(href='#') #{__('Help')}
+  #help
+    #paytable.modal-content
+      .modal-header
+        a(href="#").close-bt ×
+        h3 #{__('Payout Table')} 
+      .modal-body
+        table.paytable
+          tr.bw-bw-bw
+            td.result bw bw bw
+            td.reward #{__('JACKPOT')}
+          tr.s-s-s
+            td.result 777
+            td.reward x 500
+          tr.btc-btc-btc
+            td.result btc btc btc
+            td.reward x 100
+          tr.b3-b3-b3
+            td.result 3b 3b 3b
+            td.reward x 30
+          tr.b2-b2-b2
+            td.result 2b 2b 2b
+            td.reward x 20
+          tr.b1-b1-b1
+            td.result 1b 1b 1b
+            td.reward x 10
+          tr.any-2-btc
+            td.result #{__('Any')} 2 btc
+            td.reward x 5
+          tr.b-b-b
+            td.result b b b
+            td.reward x 2
+          tr.any-btc
+            td.result #{__('Any')} btc
+            td.reward x 1
+        p.house-edge #{__('Expected Return to Player: 99.6%')}
+
+  .g-playfield
+    .game-area
+      .slot
+        .reels-wrapper
+          .jackpot-wrapper
+            .jackpot
+              | #{__('PLAY MONEY')}
+          .reels
+            #payline
+            #reel1.reel
+              .symbols-wrapper
+                .symbols.spinning
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+              .reel-shadow
+            #reel2.reel
+              .symbols-wrapper
+                .symbols.spinning
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+              .reel-shadow
+            #reel3.reel
+              .symbols-wrapper
+                .symbols.spinning
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+                  include ./_lucky7_symbols
+              .reel-shadow
+        #game-result-cnt
+
+  .g-actions-wrapper
+    .g-actions
+      #bet-choices.g-actions-bet
+        .g-actions-opt.action.check-bt.autoplay
+          input#auto-play(type="checkbox", name="auto-play", value="1", checked="checked")
+          label(for="auto-play")
+            | #{__('Auto Spin')}
+        button#bet-bt.action.start #{__('Spin')}
+        span.betinput
+          input#bet-amount.betsize(type='number', value='10', min='1', max='50', pattern='[0-9]*', disabled="disabled")
+        .operators
+          button(disabled="disabled")#bet-multiplier.action.operator
+            small x
+            | 2
+          button(disabled="disabled")#bet-divider.action.operator ½
+  
+  #shortcuts-modal.modal
+    .modal-content
+      .modal-header
+        a(href="#").close-bt ×
+        h3.help-section-title #{__('Keyboard Shortcuts')}
+      .modal-body
+        dl
+          .shortcut-wrapper
+            dt
+              .shortcut Enter
+            dd #{__('Spin')}
+          .shortcut-wrapper
+            dt
+              .shortcut Space
+            dd #{__('Toggle Auto Spin')}
+          .shortcut-wrapper
+            dt
+              .shortcut ◄
+            dd #{__('Halve Amount')}
+          .shortcut-wrapper
+            dt
+              .shortcut ►
+            dd #{__('Double Amount')}
+
+  include ../templates/lucky7/game_result
+  include _meta
+
+

@@ -1,0 +1,443 @@
+use("../../plugins/cdn.js")
+@import '/cdnhash'
+
+$square = 60px
+square(percentage)
+  $square / 100 * percentage
+$squareOuterWidth = 32px
+
+.g-playfield
+  margin-bottom 80px
+
+board-box()
+  border: 1px solid #fff
+  box-sizing: border-box
+  position: absolute
+  line-height: $square
+  height: $square
+  text-align: center
+  color: #fff
+  font-size: 26px
+  font-weight: 700
+  user-select(none)
+  &.highlight:after
+    content: ""
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    position: absolute
+    background: rgba(255,255,255,.5)
+  &.winner
+    color: #fed500
+    border: 1px solid #fed500
+    box-shadow: 0 0 0 1px #fed500
+    text-shadow: 0 1px 0 rgba(0,0,0,.2)
+    z-index: 1
+    animation: rouletteWinningNumber 900ms ease-in-out
+
+/* Roulette */
+#g-roulette
+  background: #004a70
+  background-image: url(CDN("/img/casino/roulette/bg.png"))
+  background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg.png"))
+  background-image: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg.png"))
+  background-image: radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg.png"))
+  box-shadow: inset 0 0 0 $spacing rgba(255,255,255,.05)
+  .green
+    background-color: #1c752c
+  .black
+    background-color: #282525
+  .red
+    background-color: #cb1d1d
+
+  .DOGE &
+    background-image: url(CDN("/img/casino/roulette/bg_doge.png"))
+    background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg_doge.png"))
+    background-image: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg_doge.png"))
+    background-image: radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3) 100%), url(CDN("/img/casino/roulette/bg_doge.png"))
+
+#help
+  table
+    width: 100%
+    th
+      font-weight: 700
+      text-align left
+    tr
+      border-bottom 1px solid #ddd 
+    td
+      height 20px
+
+#spinner
+  margin 0 auto
+  width $square * 9
+  border 2px solid rgba(0,0,0,.8)
+  border-radius 5px
+  overflow hidden
+  clearfix()
+
+.results-wrapper
+  width $square * 4
+  float left
+  background rgba(#000,.5) !important
+  overflow hidden
+
+#bet-sizer .betinput
+  width 200px
+
+.results
+  width 500px
+  height $square
+  float right
+  clearfix()
+  list-style none
+  margin 0
+  margin-right 5px
+  padding 0
+  position relative
+  li
+    background: transparent !important
+    height: 100%
+    width: ($square / 2)
+    float: right
+    position: relative
+    display: block
+    span
+      display: inline-block
+      font-weight: 700
+      font-size: 18px
+      position: absolute
+      left: 0
+      width: 100%
+      text-align: center
+  .green
+    line-height: $square
+    color: #1c752c
+  .black
+    span
+      bottom: 3px
+    color: #feba00
+  .red
+    span 
+      top: 3px
+    color: #cb1d1d
+.wheel-wrapper
+  width: $square * 5
+  float: left
+  overflow: hidden
+  border-left: 0
+  box-sizing: border-box
+  .wheel
+    width: (35 * $squareOuterWidth)px
+    height: $square
+    position: relative
+    list-style none
+    margin 0
+    padding 0
+    left: 0
+    clearfix()
+  .number
+    .num, .bucket
+      height: ($square / 2 - 1px)
+    .num
+      line-height: ($square / 2 - 1px)
+      font-size: 18px
+    .bucket
+      border-top: 2px solid #ededed
+      box-sizing: border-box
+      box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+      .ball
+        display: block
+        height: (($square / 2 - 1px) / 100 * 60)
+        width: (($square / 2 - 1px) / 100 * 60)
+        border-radius: (square(80) / 2 - 1px) * 2
+        margin: (($square / 2 - 1px) / 100 * 16) auto
+        background #fff
+        background: radial-gradient(circle farthest-side at 33% 33%, #fff,#b0b0b0 100%)
+        box-shadow: 0 1px 1px rgba(0,0,0,.5)
+    color: #fff
+    text-align: center
+    font-weight: 700
+    width: ($square / 2)
+    height: $square
+    box-sizing: border-box
+    float: left 
+    border: 1px solid #ededed
+    user-select(none)
+    &:first-child
+      margin: 0
+
+#game-result-cnt
+  display: inline-block
+  text-align: center
+  .balance-change
+    font-size: 18px
+
+#bet-meta
+  width: $square * 12
+  margin: 0 auto
+  height 40px
+  text-align: center
+  position: relative
+
+#bet-size
+  position: absolute
+  left: 0
+  top: 0
+  color: #fff
+  font-weight: 700
+  font-size: 18px
+  display: none
+
+.board
+  width: $square * 14
+  height: $square * 5
+  margin: 20px auto 10px auto
+  position: relative
+  .number
+    board-box()
+    width: $square
+
+/* Chip Display */
+.chips
+  height: ($square / 2)
+  min-width: ($square / 2)
+  text-align: center
+  line-height: ($square / 2) - 2px
+  display: none
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-top: -($square / 4)
+  margin-left: -($square / 4)
+  border-radius: $square
+  background: linear-gradient(#ffec8a, #d9c56c)
+  border: 1px solid #483704
+  border-bottom: 2px solid #483704
+  font-weight: 700
+  color: #483704
+  font-size: 16px
+  padding: 0 8px
+  box-sizing: border-box
+  z-index: 99
+  user-select(none)
+  &.lost
+    opacity: 0.7
+    transition: opacity .5s ease-out
+  &.won
+    background: #25950f
+    color: #fff
+    border: 1px solid #0f3208
+    border-bottom: 2px solid #0f3208
+  .BC &
+    background linear-gradient(#222, #333)
+    border 2px solid #dcb152
+    color #dcb152
+
+
+#num-3, #num-6, #num-9, #num-12, #num-15, #num-18, #num-21, #num-24, #num-27, #num-30, #num-33, #num-36, #col-3
+  top: $square * 0
+#num-2, #num-5, #num-8, #num-11, #num-14, #num-17, #num-20, #num-23, #num-26, #num-29, #num-32, #num-35, #col-2
+  top: $square * 1
+#num-1, #num-4, #num-7, #num-10, #num-13, #num-16, #num-19, #num-22, #num-25, #num-28, #num-31, #num-34, #col-1
+  top: $square * 2
+#doz-1, #doz-2, #doz-3
+  top: $square * 3
+#hilo-1, #hilo-2, #eo-1, #eo-2, #rb-1, #rb-2
+  top: $square * 4
+
+/* Numbers */
+#num-3, #num-2, #num-1
+  left: $square * 1
+#num-6, #num-5, #num-4
+  left: $square * 2
+#num-9, #num-8, #num-7
+  left: $square * 3
+#num-12, #num-11, #num-10
+  left: $square * 4
+#num-15, #num-14, #num-13
+  left: $square * 5
+#num-18, #num-17, #num-16
+  left: $square * 6
+#num-21, #num-20, #num-19
+  left: $square * 7
+#num-24, #num-23, #num-22
+  left: $square * 8
+#num-27, #num-26, #num-25
+  left: $square * 9
+#num-30, #num-29, #num-28
+  left: $square * 10
+#num-33, #num-32, #num-31
+  left: $square * 11
+#num-36, #num-35, #num-34
+  left: $square * 12
+#col-1, #col-2, #col-3
+  left: $square * 13
+
+#num-0
+  board-box()
+  left: $square * 0
+  width: $square
+  height: $square * 3
+  line-height: $square * 3
+  border-radius: 100px 0 0 100px
+  &.highlight:after
+    border-radius: 100px 0 0 100px
+
+/* Columns */
+#col-1, #col-2, #col-3
+  board-box()
+  width: $square * 1
+#col-1, #col-1.highlight:after
+  border-radius: 0 0 10px 0
+
+#col-3, #col-3.highlight:after
+  border-radius: 0 10px 0 0
+
+/* Dozen */
+#doz-1, #doz-2, #doz-3
+  board-box()
+  width: $square * 4
+#doz-1
+  left: $square * 1
+#doz-2
+  left: $square * 5
+#doz-3
+  left: $square * 9
+
+/* High or Low */
+#hilo-1, #hilo-2
+  board-box()
+  width: $square * 2
+#hilo-1
+  left: $square * 1
+  border-radius: 0 0 0 10px
+  &.highlight:after
+    border-radius: 0 0 0 10px
+#hilo-2
+  left: $square * 11
+  border-radius: 0 0 10px 0
+  &.highlight:after
+    border-radius: 0 0 10px 0
+
+/* Even or Odd */
+#eo-1, #eo-2
+  board-box()
+  width: $square * 2
+#eo-1
+  left: $square * 3
+#eo-2
+  left: $square * 9
+
+/* Red or Black */
+#rb-1, #rb-2
+  board-box()
+  width: $square * 2
+#rb-1
+  left: $square * 5
+  background-color: #cb1d1d
+#rb-2
+  left: $square * 7
+  background-color: #282525
+
+/* Bets */
+bet-btn(num)
+  position: absolute
+  cursor: pointer
+  border: 0
+  background: transparent
+  width: ($square * num - square(20))
+  height: square(80)
+  margin: square(10)
+  z-index: 1
+  user-select(none)
+
+/* Bets: Numbers */
+for num in (1..36)
+  #bet-num-{num}
+    @extends #num-{num}
+    bet-btn(1)
+
+#bet-num-0
+  position: absolute
+  cursor: pointer
+  left: $square * 0
+  height: ($square * 3 - square(20))
+  width: square(80)
+  margin: square(10)
+  border-radius: 100px 0 0 100px
+  z-index: 1
+  user-select(none)
+
+/* Bets: Split */
+betsplit(pos, row, col)
+  if pos == vertical
+    height: square(80)
+    width: square(20)
+    margin: square(10) 0
+    left: ($square * col - square(10))
+    top: $square * row
+  else if pos == horizontal
+    width: square(80)
+    height: square(20)
+    margin: 0 square(10)
+    left: $square * col
+    top: ($square * row - square(10))
+  position: absolute
+  cursor: pointer
+  z-index: 1
+  user-select(none)
+
+for row in (0..2)
+  for col in (1..12)
+    #bet-spl-v-{row}-{col}
+      betsplit(vertical, row, col)
+
+for col in (1..12)
+  for row in (1..2)
+    #bet-spl-h-{row}-{col}
+      betsplit(horizontal, row, col)
+
+/* Bets: Corner */
+betcorner(row, col)
+  height: square(20)
+  width: square(20)
+  left: ($square * col - square(10))
+  top: ($square * row - square(10))
+  position: absolute
+  cursor: pointer
+  z-index: 1
+  user-select(none)
+
+for col in (1..12)
+  for row in (1..2)
+    #bet-cor-{row}-{col}
+      betcorner(row, col)
+
+/* Bets: Line + Street */
+for num in (1..12)
+  #bet-line-{num}
+    betcorner(0, num)
+  #bet-str-{num}
+    betsplit(horizontal, 0, num)
+
+/* Bets: Column + Dozen */
+for num in (1..3)
+  #bet-col-{num}
+    @extends #col-{num}
+    bet-btn(1)
+  #bet-doz-{num}
+    @extends #doz-{num}
+    bet-btn(4)
+
+/* Bets: High/Low + Even/Odd + Red/Black */
+for num in (1..2)
+  #bet-hilo-{num}
+    @extends #hilo-{num}
+    bet-btn(2)
+  #bet-eo-{num}
+    @extends #eo-{num}
+    bet-btn(2)
+  #bet-rb-{num}
+    @extends #rb-{num}
+    bet-btn(2)

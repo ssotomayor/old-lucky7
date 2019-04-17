@@ -1,0 +1,70 @@
+{
+  "development" : {
+    "app_host": "localhost:5000",
+    "mongo_uri": "mongodb://localhost/lucky7",
+    "redis": {
+      "db": "lucky7_auth_dev"
+    },
+    "session": {
+      "cookie_secret": "secretkey",
+      "session_key": "lucky7",
+      "cookie": {
+        "maxAge": 2592000000,
+        "path": "/",
+        "httpOnly": true,
+        "secure": false
+      },
+      "store": {
+        "url": "mongodb://localhost/lucky7_dev",
+        "auto_reconnect": true
+      }
+    },
+    "crypter": {
+      "key": "",
+      "algorithm": "aes256"
+    },
+    "wallets": {
+    },
+    "caps": {
+      "min": {},
+      "max": {}
+    },
+    "players": {
+      "hostname": "http://localhost:5000"
+    }
+  },
+  "test" : {
+    "app_host": "localhost:5000",
+    "mongo_uri": "mongodb://localhost/lucky7_test",
+    "redis": {
+      "db": "lucky7_auth_test"
+    },
+    "session": {
+      "cookie_secret": "secretkey",
+      "session_key": "lucky7",
+      "cookie": {
+        "maxAge": 2592000000,
+        "path": "/",
+        "httpOnly": true,
+        "secure": false
+      },
+      "store": {
+        "url": "mongodb://localhost/lucky7_dev",
+        "auto_reconnect": true
+      }
+    },
+    "crypter": {
+      "key": "",
+      "algorithm": "aes256"
+    },
+    "wallets": {
+    },
+    "caps": {
+      "min": {},
+      "max": {}
+    },
+    "players": {
+      "hostname": "http://localhost:5000"
+    }
+  }
+}

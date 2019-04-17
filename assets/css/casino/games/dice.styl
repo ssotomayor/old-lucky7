@@ -1,0 +1,190 @@
+use("../../plugins/cdn.js")
+@import '/cdnhash'
+
+$yellow = #feba00
+$red = #d23737
+
+/* Dice */
+#g-dice
+  background: #757575
+  background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  background-image: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  background-image: radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  background-repeat: repeat, repeat
+  background-position: center 35%
+  background-size: auto, auto
+  box-shadow: inset 0 0 0 $spacing rgba(255,255,255,.05)      
+  .game-area
+    width 780px
+    height 385px
+
+  .g-playfield
+    margin-bottom 132px
+
+  #game-result-cnt-wrap
+    position absolute
+    top 265px
+    left 4px
+    width 200px
+    text-align center
+
+  .table
+    margin 0
+    width 100%
+    max-width 100%
+    color #ddd
+    background #222
+    border 0
+    text-align center
+
+  .action-area
+    float right
+    .action
+      display inline-block
+      height 108px
+
+  .bet-area
+    float left
+    text-align left
+    position relative
+    box-sizing border-box
+    .bet-group
+      margin 5px
+      float left
+    .bet-sizer
+      .input-prepend
+        border-top-right-radius 0
+        border-top 0
+      button
+        float right
+    .input-prepend
+      display inline-block
+      border 1px solid #333
+      padding 3px
+      background #b6b6b6
+      background linear-gradient(top, #f5f5f5, #b5b5b5)
+      box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+      border-radius 5px
+      box-sizing border-box
+      overflow hidden
+      vertical-align bottom
+      box-shadow 0 1px 2px rgba(#000,.33)
+      white-space nowrap
+      position relative
+      label
+        user-select none
+        width 60px
+        display inline-block
+      label
+      .bet-unit
+        text-transform uppercase
+        margin 0 10px
+        height 23px
+        line-height 23px
+        font-size 13px
+        font-weight bold
+        color #444
+        text-shadow 0 1px 2px rgba(255,255,255,0.3)
+      .bet-unit
+        position absolute
+        top 7px
+        right 7px
+      input
+        box-sizing border-box
+        height 30px
+        padding 0 10px
+        border-radius 3px
+        border 1px solid rgba(#000,.5)
+        margin 0
+        width 120px
+        outline none
+        font-size 1.25em
+        font-weight bold
+
+.bet-history
+  position absolute
+  right 0
+  width 500px
+  margin 30px
+  border-radius 8px
+  overflow auto
+  th
+    font-weight bold
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    border 0
+    background rgba(#000,.1)
+    color $yellow
+  tr
+    background none
+  tr:nth-child(even)
+    background rgba(#000,.1)
+
+  td
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    box-sizing border-box
+    height 36px
+
+  .dice-bet
+    width 105px
+  .dice-target
+    width 87px
+  .dice-roll
+    width 78px
+  .dice-payout
+  .dice-profit
+    width 113px
+
+  .dice-win
+    color green
+  .dice-lose
+    color $red
+
+.big-dice
+  background #fff
+  display inline-block
+  border-radius 8px
+  position absolute
+  top 100px
+  user-select none
+  left 30px
+  color #222
+  font-weight bold
+  height 150px
+  text-align center
+  width 150px
+  font-size 80px
+  line-height 123px
+  box-shadow 0 2px 5px #333
+  border 4px solid #d4d4d4
+  border-top 4px solid #ddd
+  border-bottom 4px solid #ccc
+  box-sizing border-box
+  span
+    display block
+    font-size 24px
+    letter-spacing 2px
+    line-height 0
+    color #9b9b9b
+    display block
+    margin-top -13px
+    text-shadow none
+  &.win
+    background #008500
+    color #fff
+    border 4px solid #005E00
+    span
+      color rgba(#fff,.5)
+  &.lose
+    color #fff
+    background #c4161c
+    border 4px solid #9e151a
+    span
+      color rgba(#fff,.5)
+
+/* Help */
+#rules
+  width: 35em

@@ -1,0 +1,63 @@
+use("../../plugins/cdn.js")
+@import '../playingcards'
+@import '/cdnhash'
+
+/* Casino War */
+
+.g-playfield
+  margin-bottom 80px
+
+.game-area
+  font-size: 130%
+
+#dealer-area
+  height 160px
+  position relative
+  text-align center
+  margin-bottom 30px
+
+#player-area
+  height 160px
+  position relative
+  text-align center
+  margin-bottom 10px
+
+#g-casino-war
+  background: #0c6722
+  background-image: url(CDN("/img/casino/cw/cw-logo.svg")), url(CDN("/img/casino/cw/bg.png"))
+  background-image: url(CDN("/img/casino/cw/cw-logo.svg")), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg.png"))
+  background-image: url(CDN("/img/casino/cw/cw-logo.svg")), -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg.png"))
+  background-image: url(CDN("/img/casino/cw/cw-logo.svg")), radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg.png"))
+  background-repeat: no-repeat, repeat, repeat
+  background-position: center 35%
+  background-size: 50%, auto, auto
+  box-shadow: inset 0 0 0 $spacing rgba(255,255,255,.05)
+  .no-svg &
+    background-image: url(CDN("/img/casino/cw/cw-logo.png")), url(CDN("/img/casino/cw/bg.png"))
+    background-repeat: no-repeat, repeat
+
+  .DOGE &
+    background-image: url(CDN("/img/casino/cw/cw-logo.svg")), url(CDN("/img/casino/cw/bg_doge.png"))
+    background-image: url(CDN("/img/casino/cw/cw-logo.svg")), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg_doge.png"))
+    background-image: url(CDN("/img/casino/cw/cw-logo.svg")), -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg_doge.png"))
+    background-image: url(CDN("/img/casino/cw/cw-logo.svg")), radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/cw/bg_doge.png"))
+
+  .card
+    float none
+
+  #game-result-cnt-wrap
+    height 40px
+  .game-result-cnt
+    display inline-block
+    z-index 2
+    text-align center
+    #game-result
+      float: left
+    #tie-bet-game-result
+      float: left
+      clear: left
+      margin: 5px 0 0 0
+
+/* Help */
+#rules
+  width: 35em

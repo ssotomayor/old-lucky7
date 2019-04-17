@@ -1,0 +1,170 @@
+#copy-address, #show-qr-bt, #generate-address-bt
+  @extends .button
+  @extends .button.black
+  float right
+  font-weight 300
+  &:focus
+    outline 0
+
+#generate-address-bt
+  width 100%
+
+#show-qr-bt
+  margin-left 6px
+
+#copy-address.zeroclipboard-is-active
+  top 1px
+  color #feba00
+
+#qr-cnt
+  display: none
+  padding: 10px 0
+  background: #fff
+  border-radius: 3px
+  text-align: center
+  img, canvas
+    margin: auto
+
+/* Transaction Modals */
+#deposit-box
+#withdraw-box
+  width 600px
+
+.transaction-modal
+  .modal-body 
+    padding 30px
+  fieldset
+    margin: 0 0 10px 0
+  label
+    margin: 0 0 8px 0
+    display: block
+    font-weight: bold
+  p
+    margin: 0 0 10px 0
+  input[type="text"], input[type="number"]
+    box-sizing: border-box
+    background: #fff
+    text-transform capitalize
+    width: 100%
+    border: 1px solid #ccc
+    padding: 10px
+    border-radius: 5px
+    font-size: 0.875em
+    &:focus
+      outline: 0
+
+  a
+    color #0083b4
+
+  .btc-deposit-address
+    background: #f0f0f0
+    padding: 10px
+    box-sizing: border-box
+    word-wrap: break-word
+    border-radius: 5px
+    display: block
+    clearfix()
+    code
+      float: left
+      margin: 6px 0
+    a
+      color #222
+
+  .terms
+    color #999
+    margin 10px 0 0 0
+
+  .loading
+    padding-right 25px
+    background #000 url(CDN("/img/ajax-loader-white.gif")) no-repeat 95% center
+
+  .get-bitcoin
+    padding 15px 30px 10px 30px
+    border-top 1px solid #ccc
+    ul
+      list-style none
+      margin 0
+      padding 0
+      li
+        display: inline-block
+        margin-right 10px
+        &:before
+          display block
+          float left
+          content ""
+          height 16px
+          width 16px
+          margin-right 6px
+          background transparent url(CDN("/img/buybtc.png")) top left no-repeat
+        &.coinbase:before
+          background-position 0 0
+        &.bitstamp:before
+          background-position -16px 0
+        &.coinnext:before
+          background-position -32px 0
+
+#open-buybtc
+  margin-bottom 10px
+  display block
+  &:hover
+    color $blue
+
+#buybtc
+  display none
+  margin-bottom 10px
+
+/* Last payments and transactions */
+#last-payments, #last-transactions
+  border-top 1px solid #ccc
+  max-height 100px
+  .title
+    font-weight bold
+    color #222
+  padding 20px
+  color #999
+  table
+    width 100%
+    td
+      border-bottom 1px solid #efefef
+      padding 5px 0
+    tr:last-child
+      td 
+        border-bottom 0
+  .payment-amount, .transaction-amount
+    font-weight bold
+  .payment-status, .transaction-status
+    font-weight bold
+    color #75b442
+  &:empty
+    display none
+
+#transactions-history
+  .title
+    font-weight bold
+    color #222
+  #transactions-cnt, #payments-cnt
+    padding 20px
+    table
+      width 100%
+      .datetime
+        width 150px
+      .txdata
+        width 600px
+      .transaction-amount
+      .payment-amount
+        width 100px
+      td
+        border-bottom 1px solid #efefef
+        padding 5px 0
+      tr:last-child
+        td 
+          border-bottom 0
+    .payment-amount, .transaction-amount
+      font-weight bold
+    .payment-status, .transaction-status
+      font-weight bold
+      color #75b442
+    .load-more-payments, .load-more-deposits
+      width 100%
+  #transactions-cnt
+    padding-bottom 0

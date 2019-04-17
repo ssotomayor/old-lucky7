@@ -1,0 +1,361 @@
+@import 'master'
+
+body
+  background #2b2b2b
+  min-width 960px
+  position relative
+
+.inner
+  width 1000px
+  margin 0 auto
+  clearfix()
+
+.page .section-header
+  font-size 18px
+  margin-bottom 10px
+  font-weight bold
+  color #222
+
+.hero-title
+  text-align center
+  color #fff
+  text-shadow 0 2px 3px rgba(0,0,0,0.2)
+  font-size 40px
+  margin 0
+
+/* Desktop */
+.page-wrapper
+  position relative
+  overflow visible
+  border-top 1px solid #2b2b2b
+  border-bottom 1px solid #2b2b2b
+  background #007A5C
+  padding 20px
+
+.page
+  background #fff
+  box-shadow 0 2px 2px rgba(#000,.3)
+  box-sizing border-box
+  color #777
+  border-radius 3px
+  overflow hidden
+  h1, h2, h3
+    margin 0
+    font-weight bold
+    color #555
+  .page-title
+    padding 10px 20px
+    font-size 20px
+    color #fff
+    background #02553e linear-gradient(rgba(#000,.1), rgba(#000,0))
+    span
+      vertical-align -1px
+      font-size 18px
+      margin-right 5px
+  h3
+    font-size 1em
+    margin 0 0 2px 0
+  em
+    background-color #fffeca
+    padding 0 .1em
+  p
+    margin 0 0 1em 0
+    line-height 20px
+    &:last-child
+      margin 0
+  a
+    color #0083b4
+    &:hover
+      color #006990
+
+.content-wrapper
+  padding 20px
+
+.content-group
+  clearfix()
+
+.games
+  clearfix()
+  box-sizing border-box
+  overflow hidden
+  margin 30px 0
+  text-align center
+  h2 
+    color #fff
+    margin-bottom 10px
+    text-shadow 0 2px 3px rgba(#000,.2)
+    font-size 20px
+  .game
+    width 200px
+    overflow hidden
+    background rgba(#000,.3)
+    box-shadow inset 0 1px 1px rgba(#000,.2), 0 1px 0 rgba(#fff,.1)
+    padding 10px
+    display inline-block
+    margin 0 10px 10px 0
+    position relative
+    border-radius 5px
+    transition background .15s linear
+    &:hover
+      background #013b2b
+    &.new
+      .game-url
+        &:after
+          content ""
+          background url(CDN("/img/index/banner-new.png")) no-repeat
+          margin -3px 0 0 -3px
+          width 101px
+          height 88px
+          display block
+    a
+      display block
+      position relative
+      width 100%
+      height 100%
+      text-align center
+      &:hover
+        .game-name
+          color #feba00
+    .game-icon
+      width 200px
+      height 200px
+      background url(CDN("/img/index/game_icons.png")) no-repeat
+      border-radius 3px
+      &.american-roulette
+        background-position 0 0
+      &.roulette
+        background-position -200px 0
+      &.lucky7
+        background-position -400px 0
+      &.casino-war
+        background-position -600px 0
+      &.blackjack
+        background-position -800px 0
+      &.video-poker
+        background-position -1000px 0
+      &.baccarat
+        background-position -1200px 0
+      &.dice
+        background-position -1400px 0
+      &.bombs
+        background-position -1600px 0
+      
+
+    .game-name
+      font-size 16px
+      text-transform uppercase
+      letter-spacing 1px
+      font-weight bold
+      padding-top 10px
+      color #fff
+      text-shadow 0 1px 2px rgba(#000,.2)
+      margin 0 0 2px 0
+
+    .game-cat
+      font-size 14px
+      text-transform uppercase
+      color #90bf78
+
+    .game-url
+      position absolute
+      border-radius 5px
+      top 0
+      bottom 0
+      left 0
+      right 0
+      z-index 1
+      &:hover
+        background-color rbga(#000.3)
+        transition all .2s linear
+        .mode-bt
+          display block
+          @extend .fadeInUp
+      .game-mode
+        position absolute
+        bottom 45px
+        width 100%       
+
+/* Button */
+.mode-bt
+  display none
+  margin 10px
+  border-radius 5px
+  padding 15px 20px
+  font-weight 700
+  text-decoration none
+  text-align center
+  &:active
+    box-shadow inset 0 1px 2px rgba(#000,.15)
+  &.btc
+    background #feba00
+    background linear-gradient(top, #F5CB08,#EBAE08)
+    color #483704
+    border 1px solid #d9a109
+    text-shadow 0 1px 0 rgba(#fff,.3)
+    border-color darken(#d9a109,60%)
+    font-size 16px
+    &:hover
+      background linear-gradient(top, #f5d959,#EBAE08)
+
+.stats
+  margin 10px 0
+  border-radius 3px
+  text-align center
+  white-space nowrap
+  clearfix()
+  .stat-wrapper
+    box-sizing border-box
+    width 33.3%
+    padding 0 5px
+    float left
+    &:first-child
+      padding-left 0
+    &:last-child
+      padding-right 0
+  .stat
+    width 100%
+    padding 5px
+    background rgba(#000,.3)
+    box-shadow inset 0 1px 1px rgba(#000,.2), 0 1px 0 rgba(#fff,.1)
+    border-radius 3px
+    display inline-block
+    box-sizing border-box
+    margin-right 20px
+    white-space nowrap
+    font-weight bold
+    margin 0
+    padding 0 10px
+    line-height 28px
+    font-size 16px
+    .stat-amount
+      border-radius 2px
+      color $yellow
+      margin-right 10px
+    .stat-label
+      color #fff
+
+.latest-winners
+  background #f9f9f9
+  box-shadow 0 1px 2px rgba(#000,.3)
+  border 1px solid #013b2b
+  box-sizing border-box
+  border-radius 3px
+  margin-bottom 10px
+  padding 20px
+  overflow hidden
+  h2
+    margin-bottom 10px
+  p
+    clear both
+    margin 0
+    font-size 14px
+    line-height 16px
+    font-weight bold
+    color #f3b200
+    text-align center
+    &.game
+      font-style normal
+      color #333
+      &:hover
+        text-decoration underline
+  #last-wins-cnt
+    overflow hidden
+    ul
+      list-style none
+      width 100%
+      margin 0
+      padding 0
+      display none
+      clearfix()
+    li
+      float left
+      padding-right 10px
+      width 100px
+      &:last-child
+        margin 0
+      a
+        text-decoration none
+    .game-icon
+      width 100px
+      height 100px
+      background url(CDN("/img/index/game_icons.png")) no-repeat
+      background-size 900px 100px
+      border-radius 3px
+      margin-bottom 5px
+      &.american-roulette
+        background-position 0 0
+      &.roulette
+        background-position -100px 0
+      &.lucky7
+        background-position -200px 0
+      &.casino_war
+        background-position -300px 0
+      &.blackjack
+        background-position -400px 0
+      &.video_poker
+        background-position -500px 0
+      &.baccarat
+        background-position -600px 0
+      &.dice
+        background-position -700px 0
+      &.bombs
+        background-position -800px 0
+      &.american-roulette
+        background-position -900px 0
+        
+    .item
+      float left
+      position relative
+      margin-bottom 5px
+      img
+        border-radius 5px
+        display block
+      i
+        position absolute
+        border-radius 5px
+        top 0
+        bottom 0
+        left 0
+        right 0
+        z-index 1
+
+/* Intro */
+.features
+  clearfix() 
+  .feature-wrap
+    box-sizing border-box
+    float left
+    width 25%
+    padding 0 5px
+    &:first-child
+      padding-left 0
+    &:last-child
+      padding-right 0
+    .feature
+      padding 20px
+      width 100%
+      min-height 100px
+      box-sizing border-box
+      border-radius 5px
+      background rgba(#000,.3)
+      box-shadow inset 0 1px 1px rgba(#000,.2), 0 1px 0 rgba(#fff,.1)
+    div
+      float left
+      margin-right 15px
+      font-size 30px
+      text-shadow 0 1px 1px rgba(#000,.5)
+      color #feba00
+    h2
+      font-size 20px
+      font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+      margin-bottom 5px
+      color #fff
+      text-shadow 0 1px 1px rgba(#000,.5)
+    p
+      font-size 15px
+      margin 0 0 0 45px
+      color #eee
+      line-height 18px
+
+#provably-fair-wrapper
+  float: left

@@ -1,0 +1,270 @@
+use("./plugins/cdn.js")
+use("./plugins/font-path.js")
+
+// Dependencies
+$blue = #5995ef
+$teal = #3eae5f
+$yellow = #feba00
+
+@import 'vendor/jquery.dataTables'
+@import 'vendor/jquery.jgrowl'
+@import 'vendor/nib/'
+@import 'site/icons'
+
+@import 'cdnhash'
+
+*
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+input[type="text"]
+input[type="email"]
+input[type="password"]
+input[type="number"]
+input[type="url"]
+  border 1px solid #ccc
+  font-size 14px
+  padding 10px
+  background #fff
+  border-radius 2px
+  position relative
+  transition all .1s linear
+  box-shadow inset 0 1px 1px 0 rgba(#000,.05)
+  &:focus
+    border-color $blue
+    box-shadow 0 0 5px rgba($blue,0.5)
+    z-index 1
+
+input
+button:focus
+  outline: none
+
+fieldset
+  margin 0 0 10px 0
+  padding 0
+  border 0
+  label
+    font-weight bold
+    display block
+    margin-bottom 5px
+
+body
+  -webkit-font-smoothing: antialiased
+  font 14px Helvetica, Arial, sans-serif
+  color #222
+  margin 0
+  background #3b3b3b
+
+nav
+  ul
+    list-style none
+    margin 0
+    padding 0
+  a
+    text-decoration none
+
+label.error
+  color #da4444
+  margin-top 3px
+  display block
+
+input.error
+  color #da4444
+  border-color #da4444
+
+.hidden
+  display none
+  text-decoration none
+
+#error-cnt
+  color #da4444
+  border-color #da4444
+  display block
+  margin 5px auto
+
+btn(color)
+  color #fff
+  position relative
+  border-radius 2px
+  background-image linear-gradient(rgba(#fff,.1), transparent)
+  background-color color
+  padding 7px 12px
+  border 0
+  font-size 14px
+  line-height 14px
+  letter-spacing .4px
+  cursor pointer
+  display inline-block
+  font-weight 700
+  font-family Helvetica, Arial, sans-serif
+  user-select none
+  -webkit-font-smoothing antialiased
+  transition all .2s linear
+  &:hover
+    color inherit
+    background lighten(color, 20%)
+    text-decoration none
+  &:active
+    top 1px
+
+header
+  background #2b2b2b
+  border-bottom 1px solid rgba(#000,.1)
+  clearfix()
+
+.logo
+  hide-text()
+  margin 0 20px
+  float left
+  background-image url(CDN('/img/affiliates/satoshibetpartners-logo.png'))
+  background-repeat: no-repeat
+  background-position: center left
+  width 270px
+  height 60px
+
+.float-right
+  float right !important
+
+.main-nav
+  ul
+    clearfix()
+    li
+      float left
+      a
+        background transparent
+        color #eee
+        font-weight bold
+        font-size 14px
+        display block
+        height 60px
+        line-height 60px
+        padding 0 20px
+        &:hover
+          text-decoration none
+          color #fff
+          background rgba(#fff,.05)
+
+.content
+  border-radius 5px
+  background #fff
+  margin 10px
+  padding 20px
+  overflow hidden
+  border 2px solid rgba(0,0,0,0.06)
+  background-clip padding-box
+
+.auth
+  width 400px
+  margin 50px auto 0 auto
+  a
+    color $blue
+    text-decoration none
+    &:hover
+      text-decoration underline
+  input
+    width 100%
+  .control-group
+    margin 5px auto
+    .label
+      display block
+      padding-bottom 3px
+      font-size 13px
+      font-weight bold
+      a
+        font-weight normal
+        float right
+  input[type="submit"]
+    btn($yellow)
+    color #483704
+    padding 12px
+    margin 5px 0
+
+.auth-links
+  padding 15px 20px
+  border-top 1px solid #eee
+  margin 15px -20px -20px -20px
+
+.page-title
+  margin -20px -20px 20px -20px
+  padding 15px 20px
+  font-size 20px
+  background #f9f9f9
+  border-bottom 1px solid #ddd
+  color #333
+
+#add-campaign
+  border 1px solid #ddd
+  padding 10px
+  border-radius 3px
+  margin-bottom 10px
+
+.button
+  -webkit-font-smoothing antialiased
+  border-radius 2px
+  background #38a123
+  color #fff
+  padding 0 15px
+  text-transform uppercase
+  height 35px
+  font-weight bold
+  font 13px Helvetica, Arial, sans-serif
+  font-weight bold
+  box-shadow none
+  border 0
+  white-space nowrap
+  cursor pointer
+  user-select none
+
+.table
+  width 100%
+  border-collapse collapse
+  th
+    background linear-gradient(#fafafa, #ebebeb)
+    border 1px solid #d5d5d5
+    padding 10px
+    text-transform uppercase
+    font-size 12px
+    text-align left
+  td
+    padding 8px
+    border 1px solid #ddd
+    vertical-align top
+  tr
+    &:nth-child(odd) td
+      background-color #f9f9f9
+  a
+    color $blue
+    text-decoration none
+
+/* Password strength meter */
+#password-strength
+  clearfix()
+  width 100%
+  padding-top 5px
+
+.cell
+  width 20%
+  float left
+  background-color #eff1f3
+  min-height 8px
+  border 1px solid #fff
+  border-radius 3px
+
+#strength-text
+  font-size 12px
+
+.veryweak
+  #s0
+    background-color red
+.weak
+  #s0, #s1
+    background-color #ee8262
+.adequate
+  #s0, #s1, #s2
+    background-color orange  
+.prettygood
+  #s0, #s1, #s2, #s3
+    background-color lighten($teal,30%)
+.excellent
+  #s0, #s1, #s2, #s3, #s4
+    background-color $teal

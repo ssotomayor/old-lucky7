@@ -1,0 +1,259 @@
+use("../../plugins/cdn.js")
+@import '/cdnhash'
+
+.shake
+  animation-duration 1s
+  animation-fill-mode both
+  animation-name shake
+
+@keyframes shake
+  0%, 100%
+    transform translateX(0)
+
+  10%, 30%, 50%, 70%, 90%
+    transform translateX(-10px)
+
+  20%, 40%, 60%, 80%
+    transform translateX(10px)
+
+.box
+  width 5px
+  height 5px
+  border-radius 50%
+  position absolute
+
+/* Bombs */
+#g-bombs
+  background #06753f
+
+  .board
+    clearfix()
+
+  .game-result-cnt
+    z-index 2
+    text-align center
+    margin-top 10px
+    height 40px
+
+  .g-actions-wrapper
+    .betsize
+      width 100px
+
+  .action-area
+    margin 15px
+    float right
+
+  .bet-area
+    width: 520px;
+    float: left;
+    text-align: left;
+    position: relative;
+    box-sizing border-box
+    margin 20px 0
+    font-size 18px
+
+  .bet-group
+    width: 237px;
+    display: inline-block;
+    text-align: left;
+    margin-left: 20px;
+    box-sizing border-box
+    .mg-group
+      margin-bottom: 23px;
+      border: 2px solid #333;
+      margin-left: 73px;
+      height: 34px;
+      margin-top: -1px;
+      box-sizing border-box
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      .bet-control
+        display: inline-block;
+        color: #d4d4d4;
+        border: 4px solid #333;
+        box-sizing border-box
+        background: rgba(0,0,0,.2);
+        cursor: pointer;
+      .mg
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        border-width: 0;
+        box-sizing border-box
+        border: 0;
+        border-right: 2px solid #333;
+        width: 40px;
+        height: 30px;
+        line-height: 31px;
+        text-align: center;
+        font-size 14px
+        float: left;
+        margin-bottom: 25px;
+        &:last-child
+          border: 0
+
+    .input-prepend
+      white-space: nowrap;
+      vertical-align: middle;
+      font-size: 0;
+      display: inline-block;
+      width: 237px;
+      box-sizing border-box
+      label
+        vertical-align: middle;
+        display inline-block
+        font-size: 16px;
+        box-sizing border-box
+        font-weight: 400;
+        padding: 0 10px;
+        height: 40px;
+        background: #333;
+        line-height: 40px;
+        margin: 0;
+        color: #fff;
+        width: 73px;
+        text-align: center;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      input
+        padding: 8px 12px;
+        line-height: 1.428571429;
+        vertical-align: middle;
+        background-color: #fff;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        box-sizing border-box
+        display: inline-block;
+        -webkit-appearance: none;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        text-align: right;
+        color: #444;
+        font-size: 16px;
+        height: 40px;
+        width: 164px;
+        border: 0;
+        padding-right: 30px
+        border-radius: 0;
+        border-top-right-radius: 3px;
+
+.multiplier
+  text-align center
+  color #fff
+  font-weight bold
+  font-size 13px
+  user-select none
+  border-radius 10px
+  background rgba(#000,.5)
+  padding 2px 0
+
+.field-row
+  float left
+  position relative
+  margin 0 5px 0 0
+
+.field-box
+  background-color green
+  background-image url(CDN("/img/casino/bombs/silver.png"))
+  width 80px
+  box-shadow inset 0 1px 0 rgba(#fff,.3), 0 1px 0 rgba(#000,.5)
+  height 80px
+  position relative
+  margin-bottom 5px
+  border-radius 4px             
+  border solid 1px #000
+  &.small
+    width 60px
+    height 60px
+  &.smaller
+    width 40px
+    height 40px
+
+.field-size
+  display inline-block
+  border 1px solid #333
+  height 60px
+  padding 3px
+  background #b6b6b6
+  background linear-gradient(top, #f5f5f5, #b5b5b5)
+  box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+  border-radius 5px
+  box-sizing border-box
+  margin 5px
+  width 120px
+  overflow hidden
+  vertical-align bottom
+  box-shadow 0 1px 2px rgba(#000,.33)
+  .field-size-dropdown
+    box-sizing border-box
+    height 30px
+    padding 0 10px
+    border-radius 3px
+    border 1px solid rgba(#000,.5)
+    width 100%
+    margin 0
+  p
+    text-transform uppercase
+    margin 0
+    height 23px
+    line-height 23px
+    font-size 13px
+    font-weight bold
+    color #444
+    text-shadow 0 1px 2px rgba(#fff,.3)  
+
+.open
+  background-color #fff
+  background-image url(CDN("/img/casino/bombs/digged.png"))
+  box-shadow inset 0 1px 4px rgba(#000,.3)
+
+.step
+  background url(CDN("/img/casino/bombs/step.png")), url(CDN("/img/casino/bombs/digged.png"))
+  background-repeat no-repeat, repeat
+  background-position center center
+  background-size 90%
+
+.bomb
+  background-image url(CDN("/img/casino/bombs/tnt.png"))
+  background-size 100% 100%
+
+.activerow
+  cursor pointer
+  background #138000 url(CDN("/img/casino/bombs/grass.png"))
+  &:hover
+    opacity 0.7
+
+.dead
+  background-color #e55f5c
+  z-index 1
+  @extend .bomb
+  @extend .shake
+
+.g-actions-wrapper .action.take-profit
+  background $yellow
+  background linear-gradient(#f5cb08, #ebae08)
+  color #483704
+
+#game-score-cnt-wrap
+  text-align center
+
+.betinput
+  label
+    float left
+    vertical-align: middle
+    font-size: 16px
+    font-weight: 400
+    padding: 0 10px
+    height: 60px
+    background: #333
+    line-height: 60px
+    margin: 0
+    color: #fff
+    text-align: center
+    border-top-left-radius: 3px
+    border-bottom-left-radius: 3px
+
+/* Help */
+#rules
+  width: 35em

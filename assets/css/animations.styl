@@ -1,0 +1,72 @@
+@keyframes flash-animate
+  0%
+    left: -30%
+  50%
+    left: 130%
+  100%
+    left: 130%
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    transform: translateY(20px)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes fadeOutDown
+  0%
+    opacity 1
+    transform translateY(0)
+  100%
+    opacity 0
+    transform translateY(20px)
+
+@keyframes deal
+  0%
+    transform: translateY(-100em), translateX(50em)
+  100%
+    transform: translate(0, 0)
+
+.fadeInUp
+  animation: fadeInUp 150ms linear
+  animation-fill-mode: both
+
+.fadeOutDown
+  animation fadeOutDown 150ms linear
+  animation-fill-mode: both
+
+.deal
+  animation deal 600ms ease-out
+
+.turn
+  animation turn 300ms ease-out
+
+.noanim
+  animation none
+
+@keyframes turn
+  0% { transform: rotateY(-180deg); }
+  100% { transform: rotateY(0deg); }
+
+/* Roulette Winner */
+
+@keyframes rouletteWinningNumber
+  0% { transform-origin: 50% 50%; transform: scale(1.0,1.0); }
+  50% { transform-origin: 50% 50%; transform: scale(1.5,1.5); filter: blur(1.5px); }
+  100% { transform-origin: 50% 50%; transform: scale(1.0,1.0); }
+
+@keyframes baccaratWinningBet
+  0% { transform-origin: 50% 50%; transform: scale(1.0,1.0); }
+  50% { transform-origin: 50% 50%; transform: scale(1.5,1.5); filter: blur(1.5px); }
+  100% { transform-origin: 50% 50%; transform: scale(1.0,1.0); }
+
+/* Shortcut Up Down */
+@keyframes shortcut-updown
+  0%
+    box-shadow 0 2px 0 #b7b7b7
+    top 0
+  100%
+    box-shadow none
+    top 2px
+

@@ -1,0 +1,108 @@
+use("./plugins/cdn.js")
+use("./plugins/font-path.js")
+
+// Dependencies
+$blue = #0083b4
+$yellow = #feba00
+$red = #d23737
+
+@import 'vendor/nib/'
+@import 'vendor/normalize'
+@import 'site/header'
+@import 'site/footer'
+
+@import 'cdnhash'
+
+
+// Fonts
+@font-face
+  font-family proximanova
+  font-style normal
+  font-weight normal
+  src url(font-path('/fonts/proximanova-regular.eot'));
+  src url(font-path('/fonts/proximanova-regular.eot?#iefix')) format('embedded-opentype'),
+    url(font-path('/fonts/proximanova-regular.woff')) format('woff'),
+    url(font-path('/fonts/proximanova-regular.ttf')) format('truetype')
+
+@font-face
+  font-family proximanova
+  font-weight bold
+  font-style normal
+  src url(font-path('/fonts/proximanova-bold.eot'));
+  src url(font-path('/fonts/proximanova-bold.eot?#iefix')) format('embedded-opentype'),
+    url(font-path('/fonts/proximanova-bold.woff')) format('woff'),
+    url(font-path('/fonts/proximanova-bold.ttf')) format('truetype')
+
+html, body
+  height: 100%
+
+body
+  -webkit-font-smoothing: antialiased
+  font 14px proximanova, Helvetica, Arial, sans-serif
+  color #222
+
+a
+  color: inherit
+  text-decoration none
+  &:hover
+    transition all .1s linear
+
+h1, h2, h3, h4, h5, h6
+  margin 0
+  font-family inherit
+  color inherit
+  text-rendering optimizelegibility
+
+fieldset
+  border 0
+  margin 0
+  padding 0
+
+nav
+  ul
+    list-style none
+    margin 0
+    padding 0
+  a
+    text-decoration: none
+
+select
+  height 25px
+  line-height 25px
+  border-radius 4px
+  font-size 13px
+  padding 4px 6px
+  border 1px solid #999
+
+button
+  -webkit-font-smoothing: antialiased
+
+.checkbox
+  cursor pointer
+  input
+    margin-right 5px
+
+.caret
+  display inline-block
+  width 0
+  height 0
+  margin-left 2px
+  vertical-align middle
+  border-top 4px solid #000
+  border-right 4px solid transparent
+  border-bottom 0 dotted
+  border-left 4px solid transparent
+  content ""
+  &.up
+    border-top 0 dotted
+    border-bottom 4px solid #000
+
+/* Helpers */
+.float-left
+  float left
+
+.float-right
+  float right
+
+.hidden
+  display: none

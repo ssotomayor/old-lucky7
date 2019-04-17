@@ -1,0 +1,174 @@
+cardem(value)
+  (value / 200 * 16)em
+suit-size = 5em
+rank-size = 2.2em
+
+@font-face
+  font-family: 'cardcharacters-regular'
+  src: url('/fonts/cardcharacters-regular.eot')
+  src: url('/fonts/cardcharacters-regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/cardcharacters-regular.woff') format('woff'),
+       url('/fonts/cardcharacters-regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+.g-cards-wrapper
+  font-size 100% /* Change size to scale cards */
+
+/* Card foundation */
+.card
+  display inline-block
+  position relative
+  width cardem(70)
+  height cardem(100)
+  box-shadow 0 0 3px #000, inset 0 1px 0 #fff
+  border-radius 5px
+  background transparent
+  user-select none
+  transform-style preserve-3d
+  perspective 600px
+
+.front
+.back
+  backface-visibility hidden
+  transform-style preserve-3d
+  float none
+  position absolute
+  left 0
+  top 0
+  width inherit
+  height inherit
+
+.front
+  background #f5f2ed
+  font-family 'cardcharacters-regular'
+  border-radius 5px
+  text-align left
+  z-index 1
+  transform rotateY(0deg)
+  &:before
+    position absolute
+    bottom .05em
+    right .1em
+    font-size 4.5em
+
+/* Back */
+.back
+  background #d53330 url(CDN("/img/cards/cards-bg-red.gif")) /*default cover*/
+  border-radius 5px
+  z-index 0
+  transform rotateY(-180deg)
+
+  &.blue
+    background: #2f447e url(CDN("/img/cards/cards-bg-blue.gif"))
+  &:before
+    content: ""
+    position: absolute
+    border: 7px solid #f5f2ed
+    border-radius 5px
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+
+.flipped
+  .front
+    z-index 0
+    display none  
+  .back
+    z-index 1
+    transform none
+
+.turn
+  .front
+    z-index 2
+
+.suit-spades:before
+  content: '♠'
+.suit-clubs:before
+  content: '♣'
+.suit-hearts:before
+  content: '♥'
+.suit-diamonds:before
+  content: '♦'
+
+/* Face pictures */
+.rank-face
+  content ""
+  bottom 0.071em
+  right 0.07em
+  left 0
+  top 0
+  background-repeat no-repeat
+  background-size 85%
+  background-position right bottom
+  border-radius: 0.1em
+
+.suit-spades
+.suit-clubs
+  &.rank-J:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/jack-black.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/jack-black.png'))
+
+  &.rank-Q:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/queen-black.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/queen-black.png'))
+
+  &.rank-K:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/king-black.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/king-black.png'))
+
+.suit-hearts
+.suit-diamonds
+  &.rank-J:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/jack-red.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/jack-red.png'))
+
+  &.rank-Q:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/queen-red.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/queen-red.png'))
+
+  &.rank-K:before
+    @extend .rank-face
+    background-image url(CDN('/img/cards/king-red.svg'))
+    .no-svg &
+      background-image url(CDN('/img/cards/king-red.png'))
+
+/* Colors */
+.suit-spades
+.suit-clubs
+  color #2f2c25
+  &.colored
+    color #25950f
+
+.suit-hearts
+.suit-diamonds
+  color #ce1010
+  &.colored
+    color #163bc8
+
+/* Rank & Suit */
+.rank
+.suit
+  display block
+  position: relative
+
+.rank
+  top: cardem(2.2)
+  left: cardem(2.2)
+  font-size: rank-size
+
+.suit
+  left: 0.3em
+  top: 0.1em
+  font-size: 1.8em

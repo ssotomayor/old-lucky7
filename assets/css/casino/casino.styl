@@ -1,0 +1,518 @@
+@import '../master'
+
+body
+  background #353534
+  min-width 900px
+  position relative
+
+.g-playfield
+  position absolute
+  top 0
+  bottom 51px
+  width 100%
+  text-align center
+  clearfix()
+  &:before
+    content ""
+    display inline-block
+    height 100%
+    vertical-align middle
+  .game-area
+    margin 30px
+    position relative
+    display inline-block
+    vertical-align middle
+
+/* Body */
+#choose_mode
+  width 500px
+
+/* Buttons */
+.mode-bt
+  margin 10px
+  border-radius 5px
+  padding 15px 20px
+  display block
+  font-weight 700
+  text-decoration none
+  text-align center
+  &:active
+    box-shadow inset 0 1px 2px rgba(#000,.15)
+  &.btc
+    background #feba00
+    background linear-gradient(top, #F5CB08,#EBAE08)
+    color #483704
+    border 1px solid #d9a109
+    text-shadow 0 1px 0 rgba(#fff,.3)
+    font-size 16px
+    &:hover
+      background linear-gradient(top, #f5d959,#EBAE08)
+  &.play
+    padding 10px 20px
+    background #bebebe
+    border 1px solid #b4b4b4
+    color #2a2a2a
+    font-size 1em
+
+.sbar-top
+  position relative
+  z-index 2
+
+.nav-gselect
+  margin 15px
+  text-align left
+  position relative
+  z-index: 1
+  .label
+    width 120px
+  .button
+    margin-right 10px
+
+.nav-gselect
+  @extends .button
+  @extends .button.black
+  &:hover
+    border-radius 5px 5px 0 0
+  .dropdown
+    @extends .button
+    @extends .button.black
+    border-radius 0 0 5px 5px
+    padding 5px 10px
+    li.current
+      color $yellow
+      &:hover
+        color $yellow
+    li
+      color rgba(#fff,.6)
+      &:hover
+        color #fff
+      a
+        padding 5px 0
+        display block
+
+
+.g-container
+  position absolute
+  top 98px
+  bottom 0
+  width 100%
+  z-index 1
+
+.g-main-wrapper
+  position relative
+  height 100%
+  min-height 600px
+
+.g-minmax
+  padding 0.5em 1em
+  border-radius 5px
+  cursor default
+  user-select none
+  color #222
+  absolute top 10px right 10px
+  background rgba(#fff,.15)
+  font-weight bold
+  text-align right
+  z-index 1
+
+.card-arrow
+  width 0 
+  height 0
+  border-left 15px solid transparent
+  border-right 15px solid transparent
+  border-top 15px solid #fff
+  position absolute
+  top -25px
+  left 50%
+  margin-left -15px
+
+/* Help */
+#help
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 100px
+  padding 60px 15px 15px 15px
+  z-index 4
+  display none
+  &.active
+    display block
+  .modal-body
+    font-size 13px
+    p
+      margin 0 0 10px 0
+    .advanced
+      margin-top 10px
+      padding 10px
+      border-radius 5px
+      background-color #eee
+    .house-edge
+      margin 10px 0 0 0
+      border 1px solid #ddd
+      border-radius 5px
+      padding 5px
+
+#rules
+  width 600px
+
+/* Game Rules */
+#view-help
+  @extend .button
+  position absolute
+  top 10px
+  left 10px
+  background: rgba(#000,.3)
+  font-weight bold
+  z-index 99
+
+.game-result
+  background #fff
+  font-weight bold
+  display inline-block
+  padding 5px 8px
+  border-radius 3px
+  white-space nowrap
+  box-shadow 0 1px 4px rgba(#000,.6)
+  &.win
+    color #25950f
+  &.fail
+    color #ce1010
+
+.card
+  @extend .deal
+
+.card.lost
+  opacity .5
+  transition opacity .5s ease-out
+  .back
+    display none
+
+.card
+  float left
+  margin-left -3.6em
+  &:first-child
+    margin-left 0
+
+.g-actions-wrapper
+  position absolute
+  bottom 50px
+  width 100%
+  text-align center
+  z-index 3
+  .g-actions
+    position relative
+    z-index 4
+    display inline-block
+    border-radius 5px 5px 0 0
+    padding 5px
+    background rgba(#000,.3)
+    background linear-gradient(top, rgba(#000,.3), rgba(#000,0))
+    box-shadow inset 0 1px 2px rgba(#000,.3)
+    clearfix()
+    .g-actions-bet
+      clearfix()
+      display inline-block
+    .operators
+    .betinput
+      float left
+    .disabled
+      opacity .33
+      color #999
+  .betperclickinput
+    display inline-block
+    border 1px solid #333
+    height 60px
+    padding 3px
+    background #b6b6b6
+    background linear-gradient(top, #f5f5f5, #b5b5b5)
+    box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+    border-radius 5px
+    box-sizing border-box
+    margin 5px
+    width 120px
+    overflow hidden
+    vertical-align bottom
+    box-shadow 0 1px 2px rgba(#000,.33)
+    .betsize
+      box-sizing border-box
+      height 30px
+      padding 0 10px
+      border-radius 3px
+      border 1px solid rgba(#000,.5)
+      width 100%
+      margin 0
+    p
+      text-transform uppercase
+      margin 0
+      height 23px
+      line-height 23px
+      font-size 13px
+      font-weight bold
+      color #444
+      text-shadow 0 1px 2px rgba(#fff,.3)
+  .action
+  .betinput
+    display inline-block
+    border 1px solid #333
+    height 60px
+    padding 10px 30px
+    border-radius 5px
+    margin 5px
+    vertical-align bottom
+    box-shadow 0 1px 2px rgba(#000,.33)
+  .action
+    background linear-gradient(top, #f5f5f5, #b5b5b5)
+    box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+    color #444
+    font-size 1em
+    text-shadow 0 1px 2px rgba(#fff,.3)
+    font-weight bold
+    cursor pointer
+    outline none
+    text-transform uppercase
+    border 1px solid #222
+    user-select(none)
+    &:not(:disabled)
+      &:hover
+        box-shadow 0 1px 4px rgba(#000,.66), inset 0 1px 0 rgba(#fff,.4)
+        color #000
+      &:active
+        color #000
+        background #b5b5b5
+        box-shadow inset 0 2px 8px rgba(#000,40%), 0 1px 0 rgba(#fff, 10%)
+    &.disabled
+      opacity .33
+      color #999
+
+  .operators
+    margin 5px
+
+  .operator
+    height 27.5px
+    width 4em
+    line-height 23.5px
+    clear both
+    float left
+    margin 0
+    padding 0
+    font-size .8em
+    small
+      font-size .8em
+    &:first-child
+      margin 0 0 5px 0
+
+  .betinput
+    box-sizing(border-box)
+    background #fff
+    padding 10px 0
+  .betsize
+    border 0
+    padding 0 10px
+    height 40px
+    width 120px
+    box-shadow none
+    outline none
+    font-size 1.25em
+    font-weight bold
+    text-align center
+    &:focus
+      box-shadow none
+
+  .check-bt
+    font-weight 500
+    padding 6px
+    font-size 13px
+    box-sizing(border-box)
+    &:not(.disabled)
+      &:hover
+        color inherit
+        box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+      &:active
+        color: inherit
+        background inherit
+        box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+    label
+      cursor pointer
+      display block
+    input
+      display inline-block
+
+  .check-bt.yellow
+    color #483704
+    background linear-gradient(top, #feba00, #e8aa01)
+    &:not(.disabled)
+      &:active
+        background linear-gradient(top, #feba00, #e8aa01)
+
+#bet-sizer
+.bet-sizer
+  float left
+  margin 5px    
+  .betinput
+    box-sizing(border-box)
+    background #b6b6b6
+    background linear-gradient(top, #f5f5f5, #b5b5b5)
+    padding 0
+    height 37px
+    padding 3px
+    border-radius 0 0 5px 5px
+    width 200px
+    margin 0
+    border-top 0
+  .betsize
+    border 0
+    padding 0 10px
+    height 100%
+    width 100%
+    box-sizing(border-box)
+    outline none
+    border-radius 3px
+    overflow hidden
+    font-size 1.25em
+    font-weight bold
+    text-align center
+    margin 0
+    border 1px solid rgba(#000,.5)
+
+  .shortcuts 
+    clearfix()
+    button
+      background #f5f5f5
+      height 23px
+      width 40px
+      line-height 23.5px
+      float left
+      margin 0
+      padding 0
+      font-size .8em
+      border-radius 5px 5px 0 0
+      border-bottom 0
+      small
+        font-size .8em
+      &:first-child
+        margin 0
+
+/* Game Meta */
+.g-meta
+  position absolute
+  bottom 0
+  height 50px
+  width 100%
+  background #2b2b2b
+  border-top 1px solid rgba(#000,.3)
+  box-shadow inset 0 1px 0 #333
+
+#provably-fair-wrapper
+  padding 10px
+  .meta-bt
+    margin 0
+
+#sound-toggle-wrapper
+  float right
+  padding 10px
+
+#keyboard-shortcuts-toggle
+  float right
+  vertical-align bottom
+  padding 10px 0 10px 10px
+
+.meta-bt
+  @extends .button
+  @extends .button.black
+  height 30px
+  background rgba(#000,.3)
+
+.provably-fair-toggle.active
+  border-radius 0 0 5px 5px
+  
+.provably-fair-toggle .icon-fair
+  vertical-align -1px
+
+#provably-fair-data
+  display none
+  background #222
+  border-radius 5px 5px 5px 0
+  position absolute
+  bottom 40px
+  left 10px
+  z-index 4
+  padding 10px
+  text-align left
+  font-size 0.875em
+  h2
+    font-weight bold
+    margin-bottom 2px
+    font-size 16px
+    color #fff
+  #verify-link
+    color #25950f
+    margin-left 5px
+    text-decoration none
+    &:hover
+      text-decoration underline
+  .seed-wrap
+    margin-bottom 5px
+  .seed
+    white-space nowrap
+    display inline-block
+    margin-right 10px
+  label
+    color #cecec6
+    font-size 0.813rem
+    display inline-block
+    width 70px
+    margin-right .375em
+    text-shadow 1px 1px 0 rgba(#000,.1)
+  input
+    border 1px solid #000
+    border-radius 3px
+    padding 5px 10px
+    width 100px
+
+
+#shortcuts-modal
+  width 300px
+  position absolute
+  bottom 60px
+  right 10px
+  .modal-body
+    padding 0
+  dl 
+    margin 0
+  dt
+    text-align left
+    float left
+    height 30px
+    line-height 30px
+  dd
+    float right
+    text-align center
+    
+.shortcut-wrapper
+  padding 10px 20px
+  border-bottom 1px solid #eee
+  overflow hidden
+  &:hover
+    .shortcut
+      animation: shortcut-updown 300ms linear infinite
+      animation-direction alternate
+
+.shortcut
+  box-sizing(border-box)
+  display inline-block
+  color #333
+  font-size 11px
+  font-weight bold
+  position relative
+  text-decoration none
+  text-align center
+  height 30px
+  line-height 29px
+  background #eff0f2
+  border-radius 4px
+  border 1px solid #b7b7b7
+  box-shadow 0 2px 0 #b7b7b7, inset 0 1px 0 #f5f5f5
+  text-shadow 0px 1px 0px #f5f5f5
+  user-select none
+  padding 0 15px

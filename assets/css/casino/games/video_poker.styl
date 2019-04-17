@@ -1,0 +1,141 @@
+use("../../plugins/cdn.js")
+@import '../playingcards'
+@import '/cdnhash'
+
+$yellow = #feba00
+
+/* Video Poker */
+.g-main-wrapper
+  background: #0045f7
+  background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  background-image: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  background-image: radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%)
+  box-shadow: inset 0 0 0 $spacing rgba(255,255,255,.05)
+  .dogecoin &
+    background-image: url(CDN("/img/casino/video-poker/bg_doge.png"))
+    background-image: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/video-poker/bg_doge.png"))
+    background-image: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/video-poker/bg_doge.png"))
+    background-image: radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.4) 100%), url(CDN("/img/casino/video-poker/bg_doge.png"))
+
+.g-playfield
+  margin-bottom 80px
+  
+.game-result-cnt
+  height 35px
+  z-index 2
+
+.g-cards-wrapper
+  font-size 125%
+
+#pay-table
+  width 900px
+  margin 0 auto 40px auto
+
+.card
+  margin-right 10px
+  margin-left 10px
+  animation none
+  cursor pointer
+
+.card-score 
+  position static
+  bottom auto
+  left auto
+  margin-top: 20px
+
+.cards-bundle
+  perspective 400px
+  .hold
+    bottom 10px
+    &:after
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      z-index 999
+      content "HELD"
+      font-weight bold
+      padding 5px 0
+      background $yellow
+      overflow hidden
+      border-radius 0 0 3px 3px
+      color #222
+      display block
+
+.card-score
+  color #ddd
+  background #2b2b2b
+  font-size 14px
+  display inline-block
+  position absolute
+  bottom -30px
+  left 0
+  font-weight bold
+  padding 5px
+  border-radius 5px
+  &:empty
+    display none
+
+#player-area
+  position relative
+  text-align center
+  height 180px
+
+.player-cards-wrap
+  clearfix()
+  position relative
+  display inline-block
+
+.videopoker-paytable
+  background rgba(#000,.3)
+  border 4px solid $yellow
+  color $yellow
+  text-transform uppercase
+  user-select none
+  font-weight bold
+  td
+    border 2px solid $yellow
+    padding 10px
+    text-align center
+    &.payout
+      font-size 25px
+    &.selected
+      background rgba(#000,.5)
+      color #fff
+
+.pay-table-select
+  display inline-block
+  border 1px solid #333
+  height 60px
+  padding 3px
+  background #b6b6b6
+  background linear-gradient(top, #f5f5f5, #b5b5b5)
+  box-shadow 0 1px 2px rgba(#000,.33), inset 0 1px 0 rgba(#fff,.4)
+  border-radius 5px
+  box-sizing border-box
+  margin 5px
+  width 180px
+  overflow hidden
+  vertical-align bottom
+  box-shadow 0 1px 2px rgba(#000,.33)
+  .pay-table-dropdown
+    box-sizing border-box
+    height 30px
+    padding 0 10px
+    border-radius 3px
+    border 1px solid rgba(#000,.5)
+    width 100%
+    margin 0
+  p
+    text-transform uppercase
+    margin 0
+    height 23px
+    line-height 23px
+    font-size 13px
+    font-weight bold
+    color #444
+    text-shadow 0 1px 2px rgba(#fff,.3)  
+
+/* Help */
+#rules
+  width: 35em

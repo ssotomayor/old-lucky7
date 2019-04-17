@@ -1,0 +1,28 @@
+@media screen and (min-width:1024px)
+
+  /* Flashing CTA */
+  .flash-container
+    position: absolute
+    top: 1px
+    left: 1px
+    right: 1px
+    bottom: 1px
+    overflow: hidden
+    border-radius: 5px
+    pointer-events: none
+    user-select: none
+
+  .flash
+    position: absolute
+    left: -30%
+    width: 0
+    height: 100%
+    transform: rotate(15deg)
+    box-shadow: 0 0 50px 15px rgba(255, 255, 255, .75)
+    animation: flash-animate 3000ms ease-in-out infinite
+
+  /* About */
+  .page .article
+    width: 50%
+    .content
+      min-height: 150px

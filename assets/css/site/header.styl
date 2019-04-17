@@ -1,0 +1,256 @@
+/* Header */
+.meta-bar
+  background #2b2b2b
+  min-width 900px
+  .meta-nav
+    height 35px
+    box-sizing border-box
+    a
+      display block
+      color #848381
+      text-shadow: 0 1px 2px rgba(0,0,0,.3)
+      font-size: 14px
+      padding 0 10px
+      height 35px
+      line-height 35px
+      vertical-align top
+      &:hover
+        color #fff
+        background linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.1))
+        .caret
+          border-top-color #fff
+      &:active
+        color $yellow
+      &.new
+        background #d23737
+        color #fff
+      &.active
+        background #f9f9f9
+        color $blue
+        text-shadow none
+      &.new
+        background #d23737
+        color #fff
+    & > ul
+      clearfix()
+      margin 0 10px
+      & > li
+        float left
+        border-right 1px solid rgba(#000,.3)
+        box-shadow 1px 0 0 #333
+    .username
+      float left
+      color #848381
+      text-shadow 0 1px 2px rgba(#000,.3)
+      height 35px
+      line-height 35px
+      padding 0 10px
+      a
+        display inline
+        padding 0
+    .currencies
+      border 0
+      box-shadow none
+    .caret
+      border-top-color #807e7c
+
+.main-bar
+  position relative
+  background #2b2b2b
+  border-top 1px solid rgba(#000,.3)
+  border-bottom 1px solid rgba(#000,.3)
+  box-shadow inset 0 1px 0 #333, inset 0 -1px 0 #333
+  width 100%
+  top 0
+  z-index 99
+  height 61px
+
+.logo
+  hide-text()
+  margin 0 20px
+  float left
+  background-image url(CDN('/img/satoshibet-logo.png'))
+  background-repeat: no-repeat
+  background-position: center left
+  width 156px
+  height 60px
+
+.main-nav
+  float left
+  ul
+    clearfix()
+  li
+    float left
+    height 60px
+    line-height 60px
+    a
+      padding 10px 15px
+      user-select none
+      border-radius 3px
+      text-transform uppercase
+      font-weight bold
+      color rgba(#fff,.6)
+      text-shadow 0 1px 1px rgba(#000,.5)
+      &:hover
+        color #fff
+      &:active
+        color $yellow
+      &.active
+        color #feba00
+        background-color rgba(#000,.3)
+
+.btn-container
+  position relative
+  .button
+    display inline-block
+
+/* Done */
+.button
+  padding .5em 10px
+  color: #eee
+  border: 0
+  margin: 0
+  font-weight: bold
+  border-radius: 5px
+  text-align: center
+  white-space: nowrap
+  box-sizing: border-box
+  cursor: pointer
+  text-decoration: none
+  user-select: none
+  display: inline-block
+  position: relative
+  &:active
+    color #feba00
+  &.black
+    background #222
+    color #ddd
+    &:hover
+      color #fff
+  &.yellow
+    background #feba00
+    background linear-gradient(top, #F5CB08,#EBAE08)
+    box-shadow inset 0 1px 1px rgba(#fff,.45), 0 1px 1px rgba(#000,.45)
+    color #483704
+    &:hover
+      background linear-gradient(top, #f5d959,#EBAE08)
+
+.dropdown-mode
+  position relative
+  text-align right
+  .label
+    display inline-block
+    text-align left
+  &:hover
+    .dropdown
+      display block
+  .dropdown
+    width 100%
+    left 0
+    top 100%
+    position absolute
+    display none
+    border 0
+    list-style none
+    box-shadow none 
+    text-align left
+
+.switch-mode
+  float right
+  color #fff
+  margin 15px 10px 15px 0
+  
+.balance-wrapper
+  float right
+  color #fff
+  line-height 28px
+  margin 16px 15px 15px 12px
+  label
+    margin-right: 10px
+    font-weight: bold
+  .balance
+    font-size 18px
+    background-color #222
+    border-radius: 5px
+    white-space nowrap
+    padding: 0 10px
+    text-align: center
+    float: right
+    cursor: pointer
+    position: relative
+    border-bottom: 0
+    .currency
+      .LTC &
+        color: silver
+    .amount
+      color: #eee
+      font-weight: bold
+      line-height: 30px
+      text-rendering: optimizeLegibility
+      position: relative
+
+.yellow
+  color #feba00
+
+.nav-trans
+  clearfix()
+  float right
+  margin 15px 10px
+
+#withdraw-bt
+  margin-right 10px
+
+#deposit-bt
+  label
+    margin-right 20px
+  .balance
+    padding: 0 15px 0 25px
+  .balance-icon
+    height 29px
+    width 29px
+    position absolute
+    display block
+    margin-right 10px
+    left -12px
+    top 0
+    content ""
+    .mBTC &
+    .m฿ &
+      background-image url(CDN("/img/balance-icon-btc.png"))
+    .DOGE &
+      background-image url(CDN("/img/balance-icon-doge.png"))
+    .LTC &
+      background-image url(CDN("/img/balance-icon-ltc.png"))
+    .BC &
+      background-image url(CDN("/img/balance-icon-bc.png"))
+    .DRK &
+      background-image url(CDN("/img/balance-icon-drk.png"))
+
+.locales
+  img
+    vertical-align middle
+
+.meta-nav
+  .dropdown
+    width 100%
+    right 0
+    margin 0
+    top 100%
+    display none
+    z-index 9999
+    background #353534
+    border-radius 0 0 5px 5px
+    position absolute
+    list-style none
+    text-align left
+    li
+      display block
+      float none
+      color rgba(#fff,.6)
+      &:hover
+        color #fff
+      a
+        padding 5px 10px
+        display block
+        height auto
+        line-height normal

@@ -1,0 +1,273 @@
+use("../../plugins/cdn.js")
+@import '/cdnhash'
+
+/* Lucky 7 */
+@font-face
+  font-family: 'digital7'
+  src: url('/fonts/digital-7.eot')
+  src: url('/fonts/digital-7.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/digital-7.woff') format('woff'),
+       url('/fonts/digital-7.ttf') format('truetype'),
+       url('/fonts/digital-7.svg#digital-7regular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+.g-playfield
+  background url(CDN("/img/casino/slot-lucky7/rays.svg")) no-repeat center center
+  background-size cover
+  padding-bottom 80px
+
+.g-main-wrapper
+  background #0fb4e7
+  background -webkit-radial-gradient(center, ellipse cover, #a9e4f7 0%,#0fb4e7 100%)
+  background-repeat repeat
+  background-position center center
+  box-shadow inset 0 0 0 $spacing rgba(#fff,.05)
+  min-height 715px
+
+.g-actions-wrapper
+  .action
+    background linear-gradient(top, #f5f5f5, #e2e2e2) !important
+    box-shadow inset 0 1px 1px rgba(#fff,.4), 0 3px 0px rgba(#000,.7)
+    &:not(.disabled)
+      &:hover
+        box-shadow inset 0 1px 10px 1px rgba(#fff,.4), 0 3px 0px #333
+      &:active
+        box-shadow inset 0 1px 10px 1px rgba(#fff,.4), 0 1px 0px #333
+        position relative
+        top 2px
+  .start
+    background linear-gradient(top, #e91f1f, #dd1313) !important
+    box-shadow inset 0 1px 1px rgba(#fff,.4), 0 3px 0px darken(#e91f1f, 60%)
+    color #fff
+    text-shadow 0 -1px 2px rgba(#000,.3)
+    &:not(.disabled)
+      &:hover
+        box-shadow inset 0 1px 1px rgba(#fff,.4), 0 3px 0px darken(#e91f1f, 60%)
+        color #fff
+      &:active
+        background linear-gradient(top, #e91f1f, #dd1313)
+        box-shadow inset 0 1px 1px rgba(#fff,.4), 0 1px 0px darken(#e91f1f, 60%)
+  .autoplay
+    width 4.5em
+
+.g-rules
+  background: #fff
+
+.balance-change
+  background linear-gradient(lighten(#25950f, 10%), #25950f)
+  border 3px solid rgba(#000,.8)
+  padding 10px 50px
+  box-shadow none
+  font-size 30px
+  &.win
+    color #fff
+
+#game-result-cnt
+  text-align center
+  position absolute
+  left 0
+  margin 0
+  width 100%
+  top 52%
+  z-index 4
+
+.jackpot-wrapper
+  background #042f3c
+  color #fff
+  text-align center
+  border-radius 5px 5px 0 0
+  padding 12px 11px 2px 11px
+  border 2px solid rgba(#000,.7)
+  border-bottom 0
+
+.jackpot
+  box-sizing border-box
+  font-size 55px
+  height 65px
+  background #171717
+  box-shadow 0 1px 1px rgba(#fff,.3)
+  line-height 65px
+  padding 0 20px
+  border 2px solid #000
+  border-radius 5px
+  position relative
+  font-weight normal
+  text-align center
+  font-family "Digital7", "Lucida Console", Monaco, monospace
+  &:before
+    content ""
+    display block
+    height 32px
+    left 0
+    right 0
+    position absolute
+    border-radius 5px
+    border-top 1px solid rgba(#fff,.5)
+    background linear-gradient(rgba(#fff,.3) 0%,rgba(#fff,0) 100%)
+  #jackpot-amount
+    display inline-block
+    margin-left 20px
+    .currency
+      font-weight normal
+
+#payline
+  background #000
+  height 2px
+  width 100%
+  position absolute
+  left 0
+  top 50%
+  box-shadow 0 1px 0 rgba(#fff,.15)
+  margin-top -1px
+  z-index 3
+
+.slot
+  background-position top center
+  display inline-block
+
+.reels
+  text-align center
+  position relative
+  background #042f3c
+  border 2px solid rgba(#000,.7)
+  border-top 0
+  padding 5px
+  border-radius 0 0 5px 5px
+
+.reels-wrapper
+  box-shadow 0 0 0 3px rgba(#000,.8)
+  position relative
+  background #42a1be
+  border-radius 5px
+  border-width 38px
+  border-style solid
+  border-image url(CDN("/img/casino/slot-lucky7/neon.png")) 40 40 40 40 round round
+  &.blink
+    border-image-source url(CDN("/img/casino/slot-lucky7/neon-blink.gif"))
+
+.reel
+  border-radius: 5px
+  margin: 5px
+  display: inline-block
+  border: 2px solid black
+  background-color: #fff
+  box-shadow inset 0 0 5px rgba(#000,.5), 0 1px 1px rgba(#fff,.3)
+  height: 300px
+  width: 186px
+  position: relative
+  padding: 0 20px
+  overflow: hidden
+
+.reel-shadow
+  background-image: url(CDN("/img/casino/slot-lucky7/reel-shadow.png")), url(CDN("/img/casino/slot-lucky7/reel-shadow.png"))
+  background-position: top left, bottom left
+  background-repeat: repeat-x
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+.symbols
+  height: 100%
+
+.symbols-wrapper
+  position: relative
+  top: -75px
+
+.symbol
+  height: 150px
+  width: 100%
+  background: url(CDN("/img/casino/slot-lucky7/symbols.svg")) no-repeat
+  background-size: 150px auto
+  .no-svg &
+    background: url(CDN("/img/casino/slot-lucky7/symbols.png")) no-repeat
+
+.bw
+  background-position: center 0
+.b1
+  background-position: center -150px
+.l7
+  background-position: center -300px
+.bt
+  background-position: center -450px
+.b2
+  background-position: center -600px
+.b3
+  background-position: center -750px
+.zo
+  background-position: center -950px
+  height: 0px
+
+/* Help */
+#paytable
+  width: 340px
+
+.paytable
+  width: 100%
+  border-spacing: 5px
+  border-collapse: separate
+  .result
+    background: url(CDN("/img/casino/slot-lucky7/paytable.png")) no-repeat
+    overflow: hidden
+    text-indent: -999px
+    height: 50px
+    width: 150px
+    padding: 0 10px
+  .bw-bw-bw
+    .result
+      background-position: 0 0
+    .reward
+      background: #e91f1f
+      font-size: 1.3em
+      transform: rotateZ(-5deg) scale(1.2)
+  .s-s-s
+    .result
+      background-position: 0 -50px
+    .reward
+      background: #0fb4e7
+  .btc-btc-btc
+    .result
+      background-position: 0 -100px
+    .reward
+      background: darken(#0fb4e7, 10%)
+  .b3-b3-b3
+    .result
+      background-position: 0 -150px
+    .reward
+      background: darken(#0fb4e7, 20%)
+  .b2-b2-b2
+    .result
+      background-position: 0 -200px
+    .reward
+      background: darken(#0fb4e7, 30%)
+  .b1-b1-b1
+    .result
+      background-position: 0 -250px
+    .reward
+      background: darken(#0fb4e7, 40%)
+  .any-2-btc
+    .result
+      background-position: 0 -300px
+    .reward
+      background: darken(#0fb4e7, 50%)
+  .b-b-b
+    .result
+      background-position: 0 -350px
+    .reward
+      background: darken(#0fb4e7, 60%)
+  .any-btc
+    .result
+      background-position: 0 -400px
+    .reward
+      background: darken(#0fb4e7, 70%)
+  .reward
+    background #0fb4e7
+    border-radius 5px
+    font-weight bold
+    color #fff
+    margin-bottom 2px
+    font-size 1.3em
+    padding 10px
+    text-shadow 0 1px 0 rgba(#000,.3)

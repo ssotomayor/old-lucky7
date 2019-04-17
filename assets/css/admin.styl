@@ -1,0 +1,28 @@
+use("./plugins/cdn.js")
+use("./plugins/font-path.js")
+
+// Dependencies
+$blue = #0083b4
+$yellow = #ffd600
+$red = #d23737
+
+@import 'vendor/bootstrap3-stylus/lib/bootstrap'
+@import 'vendor/jquery.dataTables'
+@import 'site/icons'
+
+@import 'cdnhash'
+
+#transactions
+  .send
+    background #f2dede
+  .receive
+    background #dff0d8
+  .move
+    opacity 0.5
+
+#revenue-calculator-result
+  display none
+
+.hidden
+  display none
+  text-decoration none

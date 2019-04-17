@@ -1,0 +1,11 @@
+script(type="text/template", id="lucky7-game-result-tpl")
+  | <%
+  |   var textResult = "";
+  |   textResult = gameResult.result.length ? 'win' : 'fail';
+  | %>
+  #game-result(class="game-result <%= textResult %>")
+    | <% if (textResult == "win") { %>
+    span#result-text #{__('WON')} 
+    span#payout 0
+    span#currency  <%= CONFIG.currencySymbol %>
+    | <% } %>

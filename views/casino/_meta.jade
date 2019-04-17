@@ -1,0 +1,39 @@
+.g-meta
+  #sound-toggle-wrapper
+    a.sound-toggle.meta-bt(href="#")
+      span.icon-soundon
+  #keyboard-shortcuts-toggle
+    a.meta-bt
+      span.icon-keyboard
+  #provably-fair-wrapper
+    a.provably-fair-toggle.meta-bt(href="#")
+      span.icon-fair
+      |  #{__('Provably Fair')}
+    #provably-fair-data
+      #result.seed-wrap
+        h2
+          | #{__('Last shuffle')} →
+          a#verify-link(href="", data-path="/provably_fair", target="_blank") #{__('Verify Shuffle')}
+        .seed
+          label(for="client-seed") #{__('Client seed')}:
+          input#client-seed(type='text', readonly='readonly')
+        .seed
+          label(for="hash-secret") #{__('Hash secret')}:
+          input#hash-secret(type='text', readonly='readonly')
+        .seed
+          label(for="server-seed") #{__('Server seed')}:
+          input#server-seed(type='text', readonly='readonly')
+        .seed
+          label(for="initial-shuffle") #{__('Initial shuffle')}:
+          input#initial-shuffle(type='text', readonly='readonly')
+        .seed
+          label(for="final-shuffle") #{__('Final shuffle')}:
+          input#final-shuffle(type='text', readonly='readonly')
+      #current-game.seed-wrap
+        h2 #{__('Next shuffle')}
+        .seed
+          label(for="client-seed") #{__('Client seed')}:
+          input#client-seed(type='text')
+        .seed
+          label(for="hash-secret") #{__('Hash secret')}:
+          input#hash-secret(type='text', readonly='readonly')

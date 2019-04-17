@@ -1,0 +1,16 @@
+script.
+  CONFIG = {
+    csrf: "#{csrfToken}",
+    minCap: "1",
+    maxCap: "100",
+    balanceType: "free",
+    currency: "free",
+    currencySymbol: "Play Money",
+    currencyNames: !{AppHelper.getCurrencyNames(true)},
+    playGame: "lucky7",
+    soundsPath: "#{CDN('/audio/' + playGame, true)}",
+    siteSoundsPath: "#{CDN('/audio/site', true)}",
+    players: {
+      hostname: "#{GLOBAL.appConfig().players.hostname}"
+    }
+  }
